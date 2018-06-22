@@ -1,0 +1,35 @@
+entity Blog {
+	name String required minlength(3),
+	handle String required minlength(3)
+}
+
+entity BlogEntry {
+	title String required minlength(3),
+	content TextBlob required,
+	date Instant required
+}
+
+entity Tag {
+	name String required minlength(3)
+}
+
+entity BlogEntryComment {
+	title String,
+	content TextBlob required,
+	date Instant required
+}
+
+relationship ManyToOne {
+	Blog{user(login)} to User,
+	BlogEntry{blog(name)} to Blog,
+	BlogEntryComment{blogEntry(title)} to BlogEntry,
+	BlogEntryComment{parent(title)} to BlogEntryComment,
+	BlogEntry{writtenBy(login)} to User,
+	BlogEntryComment{writtenBy(login)} to User
+}
+
+relationship ManyToMany {
+	BlogEntry{tag(name)} to Tag{entry}
+}
+
+paginate BlogEntry, Tag with infinite-scroll
