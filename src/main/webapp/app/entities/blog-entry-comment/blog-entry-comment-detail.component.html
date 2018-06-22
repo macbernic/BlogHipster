@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="blogEntryComment">
+            <h2><span>Blog Entry Comment</span> {{blogEntryComment.id}}</h2>
+            <hr>
+            <-alert-error></-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Title</span></dt>
+                <dd>
+                    <span>{{blogEntryComment.title}}</span>
+                </dd>
+                <dt><span>Content</span></dt>
+                <dd>
+                    <span>{{blogEntryComment.content}}</span>
+                </dd>
+                <dt><span>Date</span></dt>
+                <dd>
+                    <span>{{blogEntryComment.date}}</span>
+                </dd>
+                <dt><span>Blog Entry</span></dt>
+                <dd>
+                    <div *ngIf="blogEntryComment.blogEntry">
+                        <a [routerLink]="['/blog-entry', blogEntryComment.blogEntry?.id, 'view']">{{blogEntryComment.blogEntry?.title}}</a>
+                    </div>
+                </dd>
+                <dt><span>Parent</span></dt>
+                <dd>
+                    <div *ngIf="blogEntryComment.parent">
+                        <a [routerLink]="['/blog-entry-comment', blogEntryComment.parent?.id, 'view']">{{blogEntryComment.parent?.title}}</a>
+                    </div>
+                </dd>
+                <dt><span>Written By</span></dt>
+                <dd>
+                    {{blogEntryComment.writtenBy?.login}}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/blog-entry-comment', blogEntryComment.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

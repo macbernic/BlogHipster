@@ -1,0 +1,72 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="-blog-entry-comment-heading">Create or edit a Blog Entry Comment</h2>
+            <div>
+                <-alert-error></-alert-error>
+                <div class="form-group" [hidden]="!blogEntryComment.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="blogEntryComment.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_title">Title</label>
+                    <input type="text" class="form-control" name="title" id="field_title"
+                        [(ngModel)]="blogEntryComment.title" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_content">Content</label>
+                    <textarea class="form-control" name="content" id="field_content"
+                        [(ngModel)]="blogEntryComment.content" ></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_date">Date</label>
+                    <div class="d-flex">
+                        <input id="field_date" type="datetime-local" class="form-control" name="date" [(ngModel)]="date"
+                        required/>
+                    </div>
+                    <div [hidden]="!(editForm.controls.date?.dirty && editForm.controls.date?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.date?.errors?.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.date?.errors?.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_blogEntry">Blog Entry</label>
+                    <select class="form-control" id="field_blogEntry" name="blogEntry" [(ngModel)]="blogEntryComment.blogEntry" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="blogEntryOption.id === blogEntryComment.blogEntry?.id ? blogEntryComment.blogEntry : blogEntryOption" *ngFor="let blogEntryOption of blogentries; trackBy: trackBlogEntryById">{{blogEntryOption.title}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_parent">Parent</label>
+                    <select class="form-control" id="field_parent" name="parent" [(ngModel)]="blogEntryComment.parent" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="blogEntryCommentOption.id === blogEntryComment.parent?.id ? blogEntryComment.parent : blogEntryCommentOption" *ngFor="let blogEntryCommentOption of blogentrycomments; trackBy: trackBlogEntryCommentById">{{blogEntryCommentOption.title}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_writtenBy">Written By</label>
+                    <select class="form-control" id="field_writtenBy" name="writtenBy" [(ngModel)]="blogEntryComment.writtenBy" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userOption.id === blogEntryComment.writtenBy?.id ? blogEntryComment.writtenBy : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.login}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
