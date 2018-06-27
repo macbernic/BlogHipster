@@ -7,7 +7,7 @@
         Added the constraints for entity BlogEntryComment.
     -->
     <changeSet id="20180626200253-2" author="jhipster">
-        
+
         <addForeignKeyConstraint baseColumnNames="blog_entry_id"
                                  baseTableName="blog_entry_comment"
                                  constraintName="fk_blog_entry_comment_blog_entry_id"
@@ -24,7 +24,7 @@
                                  baseTableName="blog_entry_comment"
                                  constraintName="fk_blog_entry_comment_written_by_id"
                                  referencedColumnNames="id"
-                                 referencedTableName="_user"/>
+                                 referencedTableName="jhi_user"/>
 
     </changeSet>
 </databaseChangeLog>

@@ -7,7 +7,7 @@
         Added the constraints for entity BlogEntry.
     -->
     <changeSet id="20180626200251-2" author="jhipster">
-        
+
         <addForeignKeyConstraint baseColumnNames="blog_id"
                                  baseTableName="blog_entry"
                                  constraintName="fk_blog_entry_blog_id"
@@ -18,7 +18,7 @@
                                  baseTableName="blog_entry"
                                  constraintName="fk_blog_entry_written_by_id"
                                  referencedColumnNames="id"
-                                 referencedTableName="_user"/>
+                                 referencedTableName="jhi_user"/>
 
         <addForeignKeyConstraint baseColumnNames="blog_entries_id"
                                  baseTableName="blog_entry_tag"
@@ -30,6 +30,6 @@
                                  constraintName="fk_blog_entry_tag_tags_id"
                                  referencedColumnNames="id"
                                  referencedTableName="tag"/>
-        
+
     </changeSet>
 </databaseChangeLog>
