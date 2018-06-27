@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { IBlog } from 'app/shared/model/blog.model';
 
 @Component({
-    selector: '-blog-detail',
+    selector: 'jhi-blog-detail',
     templateUrl: './blog-detail.component.html'
 })
 export class BlogDetailComponent implements OnInit {

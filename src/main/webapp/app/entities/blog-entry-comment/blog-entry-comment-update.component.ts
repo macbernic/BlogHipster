@@ -13,7 +13,7 @@ import { BlogEntryService } from 'app/entities/blog-entry';
 import { IUser, UserService } from 'app/core';
 
 @Component({
-    selector: '-blog-entry-comment-update',
+    selector: 'jhi-blog-entry-comment-update',
     templateUrl: './blog-entry-comment-update.component.html'
 })
 export class BlogEntryCommentUpdateComponent implements OnInit {

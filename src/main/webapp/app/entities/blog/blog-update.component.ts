@@ -9,7 +9,7 @@ import { BlogService } from './blog.service';
 import { IUser, UserService } from 'app/core';
 
 @Component({
-    selector: '-blog-update',
+    selector: 'jhi-blog-update',
     templateUrl: './blog-update.component.html'
 })
 export class BlogUpdateComponent implements OnInit {

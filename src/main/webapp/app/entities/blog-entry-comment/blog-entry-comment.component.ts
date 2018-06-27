@@ -8,7 +8,7 @@ import { Principal } from 'app/core';
 import { BlogEntryCommentService } from './blog-entry-comment.service';
 
 @Component({
-    selector: '-blog-entry-comment',
+    selector: 'jhi-blog-entry-comment',
     templateUrl: './blog-entry-comment.component.html'
 })
 export class BlogEntryCommentComponent implements OnInit, OnDestroy {

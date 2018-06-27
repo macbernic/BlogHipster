@@ -8,7 +8,7 @@ import { IBlogEntry } from 'app/shared/model/blog-entry.model';
 import { BlogEntryService } from './blog-entry.service';
 
 @Component({
-    selector: '-blog-entry-delete-dialog',
+    selector: 'jhi-blog-entry-delete-dialog',
     templateUrl: './blog-entry-delete-dialog.component.html'
 })
 export class BlogEntryDeleteDialogComponent {
@@ -32,7 +32,7 @@ export class BlogEntryDeleteDialogComponent {
 }
 
 @Component({
-    selector: '-blog-entry-delete-popup',
+    selector: 'jhi-blog-entry-delete-popup',
     template: ''
 })
 export class BlogEntryDeletePopupComponent implements OnInit, OnDestroy {

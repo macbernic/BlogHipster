@@ -8,7 +8,7 @@ import { ITag } from 'app/shared/model/tag.model';
 import { TagService } from './tag.service';
 
 @Component({
-    selector: '-tag-delete-dialog',
+    selector: 'jhi-tag-delete-dialog',
     templateUrl: './tag-delete-dialog.component.html'
 })
 export class TagDeleteDialogComponent {
@@ -32,7 +32,7 @@ export class TagDeleteDialogComponent {
 }
 
 @Component({
-    selector: '-tag-delete-popup',
+    selector: 'jhi-tag-delete-popup',
     template: ''
 })
 export class TagDeletePopupComponent implements OnInit, OnDestroy {

@@ -10,7 +10,7 @@ import { ITEMS_PER_PAGE } from 'app/shared';
 import { TagService } from './tag.service';
 
 @Component({
-    selector: '-tag',
+    selector: 'jhi-tag',
     templateUrl: './tag.component.html'
 })
 export class TagComponent implements OnInit, OnDestroy {

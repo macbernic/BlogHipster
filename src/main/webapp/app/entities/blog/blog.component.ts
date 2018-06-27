@@ -8,7 +8,7 @@ import { Principal } from 'app/core';
 import { BlogService } from './blog.service';
 
 @Component({
-    selector: '-blog',
+    selector: 'jhi-blog',
     templateUrl: './blog.component.html'
 })
 export class BlogComponent implements OnInit, OnDestroy {

@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ITag } from 'app/shared/model/tag.model';
 
 @Component({
-    selector: '-tag-detail',
+    selector: 'jhi-tag-detail',
     templateUrl: './tag-detail.component.html'
 })
 export class TagDetailComponent implements OnInit {

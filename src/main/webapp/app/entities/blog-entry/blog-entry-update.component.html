@@ -1,9 +1,9 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
-            <h2 id="-blog-entry-heading">Create or edit a Blog Entry</h2>
+            <h2 id="create-blog-entry-heading">Create or edit a Blog Entry</h2>
             <div>
-                <-alert-error></-alert-error>
+                <jhi-alert-error></jhi-alert-error>
                 <div class="form-group" [hidden]="!blogEntry.id">
                     <label for="id">ID</label>
                     <input type="text" class="form-control" id="id" name="id"

@@ -10,7 +10,7 @@ import { ITEMS_PER_PAGE } from 'app/shared';
 import { BlogEntryService } from './blog-entry.service';
 
 @Component({
-    selector: '-blog-entry',
+    selector: 'jhi-blog-entry',
     templateUrl: './blog-entry.component.html'
 })
 export class BlogEntryComponent implements OnInit, OnDestroy {

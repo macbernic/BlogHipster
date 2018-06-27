@@ -5,7 +5,7 @@ import { JhiDataUtils } from 'ng-jhipster';
 import { IBlogEntryComment } from 'app/shared/model/blog-entry-comment.model';
 
 @Component({
-    selector: '-blog-entry-comment-detail',
+    selector: 'jhi-blog-entry-comment-detail',
     templateUrl: './blog-entry-comment-detail.component.html'
 })
 export class BlogEntryCommentDetailComponent implements OnInit {

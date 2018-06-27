@@ -15,7 +15,7 @@ import { ITag } from 'app/shared/model/tag.model';
 import { TagService } from 'app/entities/tag';
 
 @Component({
-    selector: '-blog-entry-update',
+    selector: 'jhi-blog-entry-update',
     templateUrl: './blog-entry-update.component.html'
 })
 export class BlogEntryUpdateComponent implements OnInit {
