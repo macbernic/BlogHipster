@@ -38,6 +38,12 @@ public class CacheConfiguration {
             cm.createCache(io.github.macbernic.blogapp.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(io.github.macbernic.blogapp.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(io.github.macbernic.blogapp.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(io.github.macbernic.blogapp.domain.Blog.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.macbernic.blogapp.domain.BlogEntry.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.macbernic.blogapp.domain.BlogEntry.class.getName() + ".tags", jcacheConfiguration);
+            cm.createCache(io.github.macbernic.blogapp.domain.Tag.class.getName(), jcacheConfiguration);
+            cm.createCache(io.github.macbernic.blogapp.domain.Tag.class.getName() + ".entries", jcacheConfiguration);
+            cm.createCache(io.github.macbernic.blogapp.domain.BlogEntryComment.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }
